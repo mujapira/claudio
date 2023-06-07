@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Bar do Cláudio</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      height: 100vh;
+    }
+    body {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+    }
+    main {
+      flex-flow: row wrap;
+    }
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #181c2a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 9999;
+    }
+
+    #toast.show {
+      opacity: 1;
+    }
+    .carousel {
+      display: flex;
+      /* overflow: hidden; */
+      /* width: 200px; */
+    }
+
+    .carousel > .item {
+      flex: 0 0 100%;
+      transition: transform 0.5s;
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 70%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .prev {
+      left: 5px; /* Posiciona o botão "Previous" à esquerda */
+    }
+
+    .next {
+      right: 5px; /* Posiciona o botão "Next" à direita */
+    }
+
+    .car-1 {
+      top: 50%;
+    }
+
+    .car-1.prev {
+      left: -5px; /* Posiciona o botão "Previous" à esquerda */
+    }
+
+    .car-1.next {
+      right: -5px; /* Posiciona o botão "Next" à direita */
+    }
+
+    .car-ava {
+      top: 20%;
+    }
+
+    .car-ava.prev {
+      left: 10px; /* Posiciona o botão "Previous" à esquerda */
+    }
+
+    .car-ava.next {
+      right: 10px; /* Posiciona o botão "Next" à direita */
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .item > {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    footer {
+      box-shadow: 0px -15px 25px rgba(131, 129, 217, 0.5);
+    }
+    header {
+      box-shadow: 0px 15px 25px rgba(131, 129, 217, 0.5);
+    }
+  </style>
+  <body class="bg-[#0E1116] text-zinc-200 flex flex-col justify-between">
+    <header class="w-100 p-6 flex gap-4 flex items-center justify-start">
+      <i class="animate-pulse ph-fill ph-beer-bottle text-[#50B2C0] text-[40px]"></i>
+      <div class="flex flex-col gap-0">
+        <span class="font-bold text-lg">Bar do Cláudio</span>
+        <span class="font-normal text-sm">diversão barata e garantida</span>
+      </div>
+    </header>
+
+    <main class="w-100 px-6 py-12 flex-1 flex justify-around gap-12">
+      <div class="relative w-auto h-auto overflow-hidden">
+        <div class="carousel w-[400px]">
+          <div class="item">
+            <section
+              class="flex flex-col w-auto overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A] max-w-[320px]"
+            >
+              <div class="flex item-center gap-3 item-center mx-auto w-full">
+                <i class="ph-fill ph-sparkle text-pink-400 text-[25px]"></i>
+                <h1 class="text-base flex items-center font-bold">Fundadora & CEO</h1>
+              </div>
+
+              <div
+                class="rounded-md overflow-hidden w-[200px] h-[200px] mx-auto flex cursor-pointer"
+              >
+                <img class="object-cover h-full w-full" src="./sophia.jpeg" alt="" />
+              </div>
+              <div class="flex justify-start items-center">
+                <span> Sophia, Gerente</span>
+              </div>
+              <p class="text-sm text-justify indent-4">
+                "Com uma visão clara em mente, decidi fundar o Bar do Cláudio, um local com
+                atmosfera descuidada que remete a um prostíbulo barato. Nossa missão é simples,
+                proporcionar uma experiência única, com coquetéis mal feitos e pratos peculiares.
+                Nossa equipe bem calorosa e acolhedora garante um atendimento autêntico e
+                envolvente, transportando os clientes para uma história fascinante."
+              </p>
+            </section>
+          </div>
+
+          <div class="item">
+            <section
+              class="flex flex-col w-auto overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A] max-w-[320px]"
+            >
+              <div class="flex item-center gap-3 item-center mx-auto w-full">
+                <i class="ph-fill ph-sparkle text-[#50B2C0] text-[25px]"></i>
+                <h1 class="text-base flex items-center font-bold">Funcionário do mês</h1>
+              </div>
+              <div
+                class="rounded-md overflow-hidden w-[200px] h-[200px] mx-auto flex cursor-pointer"
+              >
+                <img class="object-cover h-full w-full" src="./maurilio2.jpeg" alt="" />
+              </div>
+              <div class="flex justify-start items-center">
+                <span> Maurílio, Faz-Tudo</span>
+              </div>
+              <p class="text-sm text-justify indent-4">
+                "Apesar não ganhar bem, eu acabo me divertindo muito aqui. O Cláudio é um cara
+                engraçado"
+              </p>
+            </section>
+          </div>
+
+          <div class="item">
+            <section
+              class="flex flex-col w-auto overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A] max-w-[320px]"
+            >
+              <div class="flex item-center gap-3 item-center mx-auto w-full">
+                <i class="ph-fill ph-sparkle text-[#50B2C0] text-[25px]"></i>
+                <h1 class=" font-bold text-base flex items-center">Menção Honrosa</h1>
+              </div>
+              <div
+                class="rounded-md overflow-hidden w-[200px] h-[200px] mx-auto flex cursor-pointer"
+              >
+                <img class="object-cover h-full w-full" src="./felibe.jpg" alt="" />
+              </div>
+              <div class="flex justify-start items-center">
+                <span> Felipe, Não se sabe</span>
+              </div>
+              <p class="text-sm text-justify indent-4">
+                "Cai durante o expediente, quebrei o cóccix, e ainda tenho que trabalhar"
+              </p>
+            </section>
+          </div>
+        </div>
+        <button class="absolute prev car-1">
+          <i class="ph text-[40px] text-[#8381D9] ph-caret-left"></i>
+        </button>
+        <button class="absolute next car-1">
+          <i class="ph text-[40px] text-[#8381D9] ph-caret-right"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col items-center gap-12">
+        <section
+          class="flex flex-col w-auto overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A]"
+        >
+          <div class="flex item-center gap-3 item-center mx-auto w-full">
+            <i class="ph-fill ph-map-pin text-[#50B2C0] text-[25px]"></i>
+            <h1 class="text-base flex items-center font-bold">Onde ficamos?</h1>
+          </div>
+          <div class="rounded-md overflow-hidden w-[350px] h-[350px] mx-auto flex cursor-pointer">
+            <img class="object-cover" src="./claudio.png" alt="" />
+          </div>
+          <div class="flex justify-around items-center">
+            <address id="address-content">
+              R. Dr. Hermógenes Godói, 1364 <br />
+              Parque Industrial
+            </address>
+            <button
+              id="copy-button"
+              class="bg-[#252D4A] w-[30px] h-[30px] flex items-center justify-center rounded-md hover:bg-[#303F73] duration-200"
+            >
+              <i class="ph ph-copy text-pink-400 text-[22px]"></i>
+            </button>
+          </div>
+        </section>
+
+        <div class="relative w-auto h-min overflow-hidden">
+          <div class="carousel w-[400px]">
+            <div class="item">
+              <section
+                class="flex w-auto flex-col overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A] max-w-[500px]"
+              >
+                <div class="flex item-center gap-3 item-center mx-auto w-auto">
+                  <i class="ph-fill ph-chart-pie-slice text-[#50B2C0] text-[25px]"></i>
+                  <h1 class=" font-bold text-base flex items-center">Avaliações</h1>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="rounded-full overflow-hidden max-w-[100px] max-h-[100px] w-full h-full flex"
+                  >
+                    <img class="object-cover h-full w-full" src="./Athur.png" alt="" />
+                  </div>
+
+                  <div class="flex flex-col justify-start items-center gap-4">
+                    <span class="text-start w-full">Atur</span>
+                    <p class="text-sm text-justify indent-4 w-full">
+                      "Muito divertido, bebi pinga e comi um salgado duvidoso"
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="item">
+              <section
+                class="flex w-auto flex-col overflow-hidden p-6 rounded-md gap-6 h-min bg-[#181C2A] max-w-[500px]"
+              >
+                <div class="flex item-center gap-3 item-center mx-auto w-auto">
+                  <i class="ph-fill ph-chart-pie-slice text-[#50B2C0] text-[25px]"></i>
+                  <h1 class="text-base flex items-center font-bold">Avaliações</h1>
+                </div>
+
+                <div class="flex gap-4">
+                  <div
+                    class="rounded-full overflow-hidden max-w-[100px] max-h-[100px] w-full h-full flex"
+                  >
+                    <img class="object-cover h-full w-full" src="./Bertelli.png" alt="" />
+                  </div>
+
+                  <div class="flex flex-col justify-start items-center gap-4">
+                    <span class="text-start w-full">Pedro</span>
+                    <p class="text-sm text-justify indent-4 w-full">
+                      "Achei justo, preço acessível e o atendimento foi regular"
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <button class="absolute prev car-ava">
+            <i class="ph text-[40px] text-[#8381D9] ph-caret-left"></i>
+          </button>
+          <button class="absolute next car-ava">
+            <i class="ph text-[40px] text-[#8381D9] ph-caret-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-12">
+        <section
+          class="flex flex-col w-[250px] overflow-hidden p-6 rounded-md gap-8 h-min justify-around bg-[#181C2A]"
+        >
+          <div class="flex h-100 gap-3 items-center mx-auto">
+            <i class="ph-fill ph-shopping-cart-simple text-[#50B2C0] text-[25px]"></i>
+            <h1 class="text-base flex items-center">O que oferecemos?</h1>
+          </div>
+          <div class="relative w-auto h-auto">
+            <div class="carousel">
+              <div class="item">
+                <span class="text-base flex items-center font-bold">Bebida</span>
+                <div class="bg-[#252D4A] h-min rounded-md p-3 hover:bg-[#303F73] duration-200">
+                  <i class="ph-fill text-[#50B2C0] text-[40px] ph-beer-bottle"></i>
+                  <i class="ph-fill text-pink-400 text-[40px] ph-beer-stein"></i>
+                </div>
+              </div>
+
+              <div class="item">
+                <span class="text-base flex items-center font-bold">Diversão</span>
+                <div class="bg-[#252D4A] h-min rounded-md p-3 hover:bg-[#303F73] duration-200">
+                  <i class="ph-fill text-[#50B2C0] text-[40px] ph-smiley"></i>
+                  <i class="ph-fill text-pink-400 text-[40px] ph-high-heel"></i>
+                </div>
+              </div>
+
+              <div class="item">
+                <span class="text-base flex items-center font-bold">Mais bebida</span>
+                <div class="bg-[#252D4A] h-min rounded-md p-3 hover:bg-[#303F73] duration-200">
+                  <i class="ph-fill text-[#50B2C0] text-[40px] ph-brandy"></i>
+                  <i class="ph-fill text-pink-400 text-[40px] ph-coffee"></i>
+                </div>
+              </div>
+
+              <div class="item">
+                <span class="text-base flex items-center font-bold">Comida</span>
+                <div class="bg-[#252D4A] h-min rounded-md p-3 hover:bg-[#303F73] duration-200">
+                  <i class="ph-fill text-[#50B2C0] text-[40px] ph-cooking-pot"></i>
+                  <i class="ph-fill text-pink-400 text-[40px] ph-hamburger"></i>
+                </div>
+              </div>
+            </div>
+            <button class="absolute prev">
+              <i class="ph text-[26px] text-[#8381D9] ph-caret-left"></i>
+            </button>
+            <button class="absolute next">
+              <i class="ph text-[26px] text-[#8381D9] ph-caret-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="flex flex-col w-auto overflow-hidden p-6 rounded-md gap-8 h-min justify-around bg-[#181C2A] max-w-[350px]">
+        <div class="flex h-100 gap-3 items-center mx-auto">
+          <i class="ph-fill ph-high-heel text-pink-400 text-[25px]"></i>
+          <h1 class="text-base font-bold flex items-center font-bold">Estamos contratando ( ͡° ͜ʖ ͡°)</h1>
+        </div>
+        <span class="text-justify">Olá prestador de serviços, quer se juntar a equipe? Entre em contato pelo rodapé da página</span>
+        
+      
+      </section>
+      </div>
+    </main>
+
+    <footer class="w-100">
+      <div class="flex flex-wrap justify-center gap-6 p-6">
+        <div class="flex-auto flex gap-3 flex-col">
+          <h3 class="text-zinc-200 font-bold">Sobre</h3>
+          <p class="text-sm max-w-[550px] text-sm text-justify">
+            Fornecer produtos/serviços de qualidade mediocre e valor questionável aos clientes.
+            Buscamos constantemente não superar as expectativas, e buscamos sempre realizar um
+            atendimento razoável. Nosso objetivo é criar um impacto, as vezes não positivo na vida
+            das pessoas, contribuindo para os seus vícios e pecados.
+          </p>
+        </div>
+        <div class="flex-auto flex flex-col gap-3">
+          <h3 class="text-zinc-200 font-bold">Contato</h3>
+          <a href="mailto:bardoclaudio@gmail.com" class="flex items-center justify-start gap-1"
+            ><i class="ph-fill text-[26px] text-pink-400 ph-envelope"></i>Email:
+            bardoclaudio@gmail.com</a
+          >
+          <a href="tel:+551197369-5569" class="flex items-center justify-start gap-1"
+            ><i class="ph-fill text-[26px] text-[#50B2C0] ph-phone-outgoing"></i>Telefone: (11)
+            97369-5569</a
+          >
+        </div>
+        <div class="flex-auto flex flex-col gap-4">
+          <h3 class="text-zinc-200 font-bold">Redes Sociais</h3>
+          <ul class="social-links flex flex-col gap-3">
+            <li>
+              <a class="flex items-center justify-start gap-1" href=""
+                ><i class="ph-fill text-[26px] text-pink-400 ph-facebook-logo"></i>
+                BarDoClaudio
+              </a>
+            </li>
+            <li>
+              <a href="" class="flex items-center justify-start gap-1"
+                ><i class="ph-fill text-[26px] text-[#50B2C0] ph-twitter-logo"></i> Bar_Claudio</a
+              >
+            </li>
+            <li>
+              <a href="" class="flex items-center justify-start gap-1"
+                ><i class="ph-fill text-[26px] text-pink-400 ph-instagram-logo"></i>
+                Bar_Claudio_Oficial
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom px-6">
+        <p class="text-sm w-full text-left">
+          &copy; 2023 Bar do Cláudio. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      const carousels = document.querySelectorAll(".carousel");
+
+      carousels.forEach((carousel) => {
+        const prevBtn = carousel.parentElement.querySelector(".prev");
+        const nextBtn = carousel.parentElement.querySelector(".next");
+
+        let currentIndex = 0;
+
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+          updateCarousel();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % carousel.children.length;
+          updateCarousel();
+        });
+
+        function updateCarousel() {
+          carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+      });
+
+      // ---------------------------------------
+
+      const copyButton = document.getElementById("copy-button");
+      const addressContent = document.getElementById("address-content");
+
+      copyButton.addEventListener("click", () => {
+        const textToCopy = addressContent.innerText;
+
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+              showToast("Texto copiado!");
+            })
+            .catch((err) => {
+              console.error("Erro ao copiar o texto:", err);
+            });
+        } else {
+          // Fallback para navegadores mais antigos
+          const textArea = document.createElement("textarea");
+          textArea.value = textToCopy;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+          showToast("Texto copiado!");
+        }
+      });
+
+      function showToast(message) {
+        const toast = document.createElement("div");
+        toast.id = "toast";
+        toast.textContent = message;
+
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+            document.body.removeChild(toast);
+          }, 2000);
+        }, 100);
+      }
+    </script>
+  </body>
+</html>
